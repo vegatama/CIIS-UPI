@@ -43,8 +43,8 @@ class _LoginPageState extends State<LoginPage> {
                   margin: const EdgeInsets.only(top: 15),
                   child: Image.asset(
                     'assets/images/UPI.png',
-                    width: 200,
-                    height: 200,
+                    width: 130,
+                    height: 130,
                   ),
                 ),
             const SizedBox(
@@ -54,14 +54,14 @@ class _LoginPageState extends State<LoginPage> {
               "CISS UPI",
               style: TextStyle(
                 color: Color.fromRGBO(253, 65, 64, 1),
-                fontSize: 44.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const Text("Centralized Information System of UPI",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24.0,
+                  fontSize: 13.0,
                   fontWeight: FontWeight.bold,
                 )
             ),
