@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'splash-screen.dart';
 import 'Leaderboard.dart';
 import 'Dashboard.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,17 @@ class MyHome extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ElevatedButton(
+                    child: Text('Login'),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return HomePage();
+                      }));
+                    }),
+              ),
               Padding(
                 padding: EdgeInsets.all(5),
                 child: ElevatedButton(
