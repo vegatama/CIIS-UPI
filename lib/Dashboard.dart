@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'NavBar.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'chart/developer_series.dart';
+import 'chart/developer_chart.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -9,6 +12,44 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<DeveloperSeries> data = [
+    DeveloperSeries(
+      year: "JAN",
+      developers: 40000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "FEB",
+      developers: 5000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "MAR",
+      developers: 40000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "APR",
+      developers: 35000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "MEI",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "JUN",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "JUL",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.w100,
                   )
               ),
-              Image.network(
-                'https://www.google.com/url?sa=i&url=https%3A%2F%2Froboguru.ruangguru.com%2Fquestion%2Flook-at-the-line-chart-below-and-answer-the-question-a-brief_vpIMfJCxEgu&psig=AOvVaw2QGt_V44D0me-3q057R2_j&ust=1651925805720000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJi-srTtyvcCFQAAAAAdAAAAABAD',
-                width: 130,
-                height: 130,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: DeveloperChart(
+                  data: data,
+                )
               ),
             ],
         ),
