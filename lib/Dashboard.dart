@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'NavBar.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 // import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'chart/developer_series.dart';
+import 'chart/developer_chart.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,6 +16,44 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<DeveloperSeries> data = [
+    DeveloperSeries(
+      year: "JAN",
+      developers: 40000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "FEB",
+      developers: 5000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "MAR",
+      developers: 40000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "APR",
+      developers: 35000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "MEI",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "JUN",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    DeveloperSeries(
+      year: "JUL",
+      developers: 45000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.fitWidth,
               // height: 350,
             ),
+            Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: DeveloperChart(
+                  data: data,
+                )
+              ),
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(border: Border.all()),
