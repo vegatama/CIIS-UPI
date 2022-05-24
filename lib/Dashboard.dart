@@ -7,6 +7,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'chart/developer_series.dart';
 import 'chart/developer_chart.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -53,6 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
       barColor: charts.ColorUtil.fromDartColor(Colors.green),
     ),
   ];
+  Map<String, double> dataMap = {
+    "Magister - S2": 500,
+    "Doktor - S3": 150,
+    "Professor": 15,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -80,28 +86,63 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.w100,
                 )),
             const SizedBox(height: 10),
-            Image.network(
-              'https://miro.medium.com/max/1400/1*7vT2GwcznErKQUARBw5fVQ.png',
-              fit: BoxFit.fitWidth,
-              // height: 350,
-            ),
             Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: DeveloperChart(
                   data: data,
-                )
-              ),
+                )),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(border: Border.all()),
               padding: EdgeInsets.all(14),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
-                        decoration: BoxDecoration(border: Border.all()),
-                        child: const Text('Bagan 1')),
+                      child: CircularPercentIndicator(
+                        radius: 100.0,
+                        lineWidth: 30.0,
+                        animation: true,
+                        percent: 0.76,
+                        center: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            new Text(
+                              "76.0%",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                            new Text(
+                              "dari target",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.w200, fontSize: 14.0),
+                            ),  
+                            new Text(
+                              "150.000",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.w200, fontSize: 14.0),
+                            ),  
+                          ],
+                        ),
+                        header: Column(
+                          children: [
+                            new Text(
+                              "Jumlah Publikasi 2022",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 17.0),
+                            ),
+                            new Text(
+                              "100.000 Publikasi",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.w200, fontSize: 14.0),
+                            ),
+
+                          ],
+                        ),
+                        circularStrokeCap: CircularStrokeCap.round,
+                        progressColor: Colors.purple,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Container(
@@ -118,36 +159,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            const Text('Sebaran Gelar Dosen',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                )),
             const SizedBox(height: 10),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(border: Border.all()),
-              padding: EdgeInsets.all(14),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                        decoration: BoxDecoration(border: Border.all()),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text('Bagan 1'),
-                            const Text('Bagan 2'),
-                            const Text('Bagan 3'),
-                            const Text('Bagan 4'),
-                          ],
-                        )),
-                  ),
-                  Expanded(
-                    child: Container(
-                        decoration: BoxDecoration(border: Border.all()),
-                        child: const Text('Bagan 1')),
-                  ),
-                ],
+            PieChart(
+              dataMap: dataMap,
+              chartType: ChartType.ring,
+              animationDuration: Duration(milliseconds: 500),
+              chartRadius: MediaQuery.of(context).size.width / 3,
+              legendOptions: const LegendOptions(
+                showLegendsInRow: false,
+                legendPosition: LegendPosition.left,
+                showLegends: true,
+                legendTextStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              chartValuesOptions: const ChartValuesOptions(
+                showChartValueBackground: true,
+                showChartValues: true,
+                showChartValuesInPercentage: true,
+                showChartValuesOutside: true,
+                decimalPlaces: 2,
               ),
             ),
-            
             const SizedBox(height: 10),
             const Text('Status Mahasiswa',
                 style: TextStyle(
