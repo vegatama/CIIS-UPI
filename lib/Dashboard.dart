@@ -91,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: DeveloperChart(
                   data: data,
                 )),
+            const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(14),
@@ -107,31 +108,31 @@ class _MyHomePageState extends State<MyHomePage> {
                         center: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            new Text(
+                            const Text(
                               "76.0%",
-                              style: new TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20.0),
                             ),
-                            new Text(
+                            const Text(
                               "dari target",
-                              style: new TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
                             ),
-                            new Text(
+                            const Text(
                               "150.000",
-                              style: new TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
                             ),
                           ],
                         ),
                         header: Column(
                           children: [
-                            new Text(
+                            Text(
                               "Jumlah Publikasi 2022",
                               style: new TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17.0),
                             ),
-                            new Text(
+                            Text(
                               "100.000 Publikasi",
                               style: new TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
@@ -145,20 +146,107 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Expanded(
                     child: Container(
-                        decoration: BoxDecoration(border: Border.all()),
+                        // decoration: BoxDecoration(border: Border.all()),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
                           children: [
-                            const Text('Bagan 1'),
-                            const Text('Bagan 2'),
-                            const Text('Bagan 3'),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Perbandingan 2021',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0),
+                                  ),
+                                  LinearPercentIndicator(
+                                    lineHeight: 8.0,
+                                    percent: 0.4,
+                                    progressColor: Colors.green,
+                                  ),
+                                  const Text(
+                                    "100.000 dari 65.000",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w200,
+                                        fontSize: 14.0),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Text(
+                              '+35%',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
                           ],
-                        )),
+                        ),
+                        const Divider(color: Colors.black12),
+                        Row(
+                          children: const [
+                            Text(
+                              'Fakultas Terbaik',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                            Text(
+                              "(Publikasi)",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14.0),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/crown.png',
+                              width: 45,
+                            ),
+                            const Text(
+                              "FPMIPA",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ],
+                        ),
+                        const Divider(color: Colors.black12),
+                        Row(
+                          children: const [
+                            Text(
+                              'Prodi Terbaik',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                            Text(
+                              "(Publikasi)",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14.0),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/crown.png',
+                              width: 45,
+                            ),
+                            const Text(
+                              "Ilmu Komputer",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
                   ),
                 ],
               ),
             ),
+            const Divider(color: Colors.black12),
             const Text('Sebaran Gelar Dosen',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -185,8 +273,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 decimalPlaces: 2,
               ),
             ),
+            const Divider(color: Colors.black12),
             const SizedBox(height: 10),
             const Text('Status Mahasiswa',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -198,7 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Text("100.000 (50%)"),
               ],
             ),
-            new LinearPercentIndicator(
+            LinearPercentIndicator(
               lineHeight: 8.0,
               percent: 0.9,
               progressColor: Colors.blue,
@@ -210,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Text("100.000 (50%)"),
               ],
             ),
-            new LinearPercentIndicator(
+            LinearPercentIndicator(
               lineHeight: 8.0,
               percent: 0.9,
               progressColor: Colors.yellow,
@@ -222,7 +312,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Text("100.000 (50%)"),
               ],
             ),
-            new LinearPercentIndicator(
+            LinearPercentIndicator(
               lineHeight: 8.0,
               percent: 0.9,
               progressColor: Colors.red,
