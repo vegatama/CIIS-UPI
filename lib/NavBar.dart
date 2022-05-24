@@ -22,49 +22,159 @@ class NavBar extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             )),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xFFFD4140), Color(0xFF060E39)]),
+            decoration: const BoxDecoration(color: const Color(0xFF060E39)),
+          ),
+          ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Color(0xFF060E39),
+              ),
+              title: Text(
+                'Beranda',
+              ),
+              onTap: () {
+                null;
+              }),
+          ExpansionTile(
+            leading: Icon(
+              Icons.book,
+              color: Color(0xFF060E39),
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Beranda'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.auto_stories),
             title: Text('Akademik'),
-            trailing: Icon(Icons.arrow_drop_down),
-            onTap: () => null,
+            children: <Widget>[
+              ListTile(
+                title: Text(
+                  'Menu 1',
+                ),
+                onTap: () {
+                  null;
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Menu 2',
+                ),
+                onTap: () {
+                  null;
+                },
+              )
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.assured_workload),
-            title: Text('Fakultas & Prodi'),
-            trailing: Icon(Icons.arrow_drop_down),
-            onTap: () => null,
+          ExpansionTile(
+            leading: Icon(
+              Icons.assured_workload,
+              color: Color(0xFF060E39),
+            ),
+            title: Text('Fakultas dan Prodi'),
+            children: <Widget>[
+              ListTile(
+                title: Text(
+                  'Menu 1',
+                ),
+                onTap: () {
+                  null;
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Menu 2',
+                ),
+                onTap: () {
+                  null;
+                },
+              )
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.people),
-            title: Text('Dosen & Mahasiswa'),
-            trailing: Icon(Icons.arrow_drop_down),
-            onTap: () => null,
+          ExpansionTile(
+            leading: Icon(
+              Icons.people,
+              color: Color(0xFF060E39),
+            ),
+            title: Text('Dosen dan Mahasiswa'),
+            children: <Widget>[
+              ListTile(
+                title: Text(
+                  'Menu 1',
+                ),
+                onTap: () {
+                  null;
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Menu 2',
+                ),
+                onTap: () {
+                  null;
+                },
+              )
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.beenhere),
+          ExpansionTile(
+            leading: Icon(
+              Icons.school,
+              color: Color(0xFF060E39),
+            ),
             title: Text('Prestasi'),
-            trailing: Icon(Icons.arrow_drop_down),
-            onTap: () => null,
+            children: <Widget>[
+              ListTile(
+                title: Text(
+                  'Menu 1',
+                ),
+                onTap: () {
+                  null;
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Menu 2',
+                ),
+                onTap: () {
+                  null;
+                },
+              )
+            ],
           ),
           ListTile(
-            leading: Icon(Icons.article),
-            title: Text('Survey'),
-            onTap: () => null,
-          ),
+              leading: Icon(
+                Icons.checklist,
+                color: Color(0xFF060E39),
+              ),
+              title: Text('Survey'),
+              onTap: () {
+                null;
+              }),
+          ListTile(
+              leading: Icon(
+                Icons.exit_to_app,
+                color: Color(0xFF060E39),
+              ),
+              title: Text('Keluar'),
+              onTap: () {
+                tampilkanDialog(context);
+              }),
         ],
       ),
     );
   }
+}
+
+void tampilkanDialog(BuildContext context) {
+  showDialog<String>(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: const Text('Keluar'),
+      content: const Text('Anda yakin ingin keluar?'),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'Cancel'),
+          child: const Text('Batal'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'OK'),
+          child: const Text('OK'),
+        ),
+      ],
+    ),
+  );
 }

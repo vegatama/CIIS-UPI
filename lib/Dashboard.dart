@@ -116,12 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               "dari target",
                               style: new TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
-                            ),  
+                            ),
                             new Text(
                               "150.000",
                               style: new TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
-                            ),  
+                            ),
                           ],
                         ),
                         header: Column(
@@ -136,11 +136,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: new TextStyle(
                                   fontWeight: FontWeight.w200, fontSize: 14.0),
                             ),
-
                           ],
                         ),
                         circularStrokeCap: CircularStrokeCap.round,
-                        progressColor: Colors.purple,
+                        progressColor: Colors.blue,
                       ),
                     ),
                   ),
