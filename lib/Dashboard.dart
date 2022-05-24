@@ -63,10 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      drawer: const NavBar(),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromARGB(0, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(0, 255, 255, 255),
         title: const Text('CISS UPI'),
       ),
       body: Padding(
@@ -94,152 +94,148 @@ class _MyHomePageState extends State<MyHomePage> {
             const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(14),
+              padding: const EdgeInsets.all(14),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: Container(
-                      child: CircularPercentIndicator(
-                        radius: 100.0,
-                        lineWidth: 30.0,
-                        animation: true,
-                        percent: 0.76,
-                        center: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "76.0%",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                            const Text(
-                              "dari target",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w200, fontSize: 14.0),
-                            ),
-                            const Text(
-                              "150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w200, fontSize: 14.0),
-                            ),
-                          ],
-                        ),
-                        header: Column(
-                          children: [
-                            Text(
-                              "Jumlah Publikasi 2022",
-                              style: new TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17.0),
-                            ),
-                            Text(
-                              "100.000 Publikasi",
-                              style: new TextStyle(
-                                  fontWeight: FontWeight.w200, fontSize: 14.0),
-                            ),
-                          ],
-                        ),
-                        circularStrokeCap: CircularStrokeCap.round,
-                        progressColor: Colors.blue,
+                    child: CircularPercentIndicator(
+                      radius: 100.0,
+                      lineWidth: 30.0,
+                      animation: true,
+                      percent: 0.76,
+                      center: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text(
+                            "76.0%",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20.0),
+                          ),
+                          Text(
+                            "dari target",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200, fontSize: 14.0),
+                          ),
+                          Text(
+                            "150.000",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200, fontSize: 14.0),
+                          ),
+                        ],
                       ),
+                      header: Column(
+                        children: const [
+                          Text(
+                            "Jumlah Publikasi 2022",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17.0),
+                          ),
+                          Text(
+                            "100.000 Publikasi",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200, fontSize: 14.0),
+                          ),
+                        ],
+                      ),
+                      circularStrokeCap: CircularStrokeCap.round,
+                      progressColor: Colors.blue,
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                        // decoration: BoxDecoration(border: Border.all()),
-                        child: Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  const Text(
-                                    'Perbandingan 2021',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.0),
-                                  ),
-                                  LinearPercentIndicator(
-                                    lineHeight: 8.0,
-                                    percent: 0.4,
-                                    progressColor: Colors.green,
-                                  ),
-                                  const Text(
-                                    "100.000 dari 65.000",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w200,
-                                        fontSize: 14.0),
-                                  ),
-                                ],
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              const Text(
+                                'Perbandingan 2021',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0),
                               ),
-                            ),
-                            const Text(
-                              '+35%',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
+                              LinearPercentIndicator(
+                                lineHeight: 8.0,
+                                percent: 0.4,
+                                progressColor: Colors.green,
+                              ),
+                              const Text(
+                                "100.000 dari 65.000",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w200,
+                                    fontSize: 14.0),
+                              ),
+                            ],
+                          ),
                         ),
-                        const Divider(color: Colors.black12),
-                        Row(
-                          children: const [
-                            Text(
-                              'Fakultas Terbaik',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                            Text(
-                              "(Publikasi)",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14.0),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/crown.png',
-                              width: 45,
-                            ),
-                            const Text(
-                              "FPMIPA",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
-                        ),
-                        const Divider(color: Colors.black12),
-                        Row(
-                          children: const [
-                            Text(
-                              'Prodi Terbaik',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                            Text(
-                              "(Publikasi)",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14.0),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/crown.png',
-                              width: 45,
-                            ),
-                            const Text(
-                              "Ilmu Komputer",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
+                        const Text(
+                          '+35%',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
                         ),
                       ],
-                    )),
+                    ),
+                    const Divider(color: Colors.black12),
+                    Row(
+                      children: const [
+                        Text(
+                          'Fakultas Terbaik',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
+                        Text(
+                          "(Publikasi)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 14.0),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/crown.png',
+                          width: 45,
+                        ),
+                        const Text(
+                          "FPMIPA",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Colors.black12),
+                    Row(
+                      children: const [
+                        Text(
+                          'Prodi Terbaik',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
+                        Text(
+                          "(Publikasi)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 14.0),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/crown.png',
+                          width: 45,
+                        ),
+                        const Text(
+                          "Ilmu Komputer",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -255,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
             PieChart(
               dataMap: dataMap,
               chartType: ChartType.ring,
-              animationDuration: Duration(milliseconds: 500),
+              animationDuration: const Duration(milliseconds: 500),
               chartRadius: MediaQuery.of(context).size.width / 3,
               legendOptions: const LegendOptions(
                 showLegendsInRow: false,
@@ -283,9 +279,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Mahasiswa Aktif"),
-                const Text("100.000 (50%)"),
+              children: const [
+                Text("Mahasiswa Aktif"),
+                Text("100.000 (50%)"),
               ],
             ),
             LinearPercentIndicator(
@@ -295,9 +291,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Cuti"),
-                const Text("100.000 (50%)"),
+              children: const [
+                Text("Cuti"),
+                Text("100.000 (50%)"),
               ],
             ),
             LinearPercentIndicator(
@@ -307,9 +303,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Drop Out"),
-                const Text("100.000 (50%)"),
+              children: const [
+                Text("Drop Out"),
+                Text("100.000 (50%)"),
               ],
             ),
             LinearPercentIndicator(
