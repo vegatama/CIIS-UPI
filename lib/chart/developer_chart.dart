@@ -4,18 +4,18 @@ import 'developer_series.dart';
 
 class DeveloperChart extends StatelessWidget {
   final List<DeveloperSeries> data;
+  final String judul;
+  DeveloperChart({required this.data, required this.judul});
 
-  DeveloperChart({required this.data});
   @override
   Widget build(BuildContext context) {
     List<charts.Series<DeveloperSeries, String>> series = [
       charts.Series(
-        id: "developers",
-        data: data,
-        domainFn: (DeveloperSeries series, _) => series.year,
-        measureFn: (DeveloperSeries series, _) => series.developers,
-        colorFn: (DeveloperSeries series, _) => series.barColor
-      )
+          id: "developers",
+          data: data,
+          domainFn: (DeveloperSeries series, _) => series.year,
+          measureFn: (DeveloperSeries series, _) => series.developers,
+          colorFn: (DeveloperSeries series, _) => series.barColor)
     ];
 
     return Container(
@@ -27,7 +27,7 @@ class DeveloperChart extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                "Tren Publikasi Universitas",
+                this.judul,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               Text(
@@ -43,5 +43,4 @@ class DeveloperChart extends StatelessWidget {
       ),
     );
   }
-
 }
