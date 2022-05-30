@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'DosenPage.dart';
 import 'FakultasPage.dart';
 import 'MahasiswaPage.dart';
-import 'SurveiPage.dart';
+import 'ProdiPage.dart';
 import 'splash-screen.dart';
 import 'Leaderboard.dart';
 import 'Dashboard.dart';
@@ -109,6 +109,17 @@ class MyHome extends StatelessWidget {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
                         return FakultasPage();
+                      }));
+                    }),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ElevatedButton(
+                    child: Text('Prodi'),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return ProdiPage();
                       }));
                     }),
               ),
