@@ -85,6 +85,7 @@ class _MahasiswaPageState extends State<MahasiswaPage> {
                 padding: const EdgeInsets.all(10.0),
                 child: DeveloperChart(
                   data: data,
+                  judul: "Tren Publikasi Mahasiswa",
                 )),
             const Divider(color: Colors.black12),
             const Text('Status Mahasiswa',

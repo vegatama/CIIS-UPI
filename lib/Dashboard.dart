@@ -90,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(10.0),
                 child: DeveloperChart(
                   data: data,
+                  judul: "Tren Publikasi Universitas",
                 )),
             const Divider(color: Colors.black12),
             Container(
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       percent: 0.76,
                       center: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const[
+                        children: const [
                           Text(
                             "76.0%",
                             style: TextStyle(
@@ -146,94 +147,94 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            children: [
-                              const Text(
-                                'Perbandingan 2021',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Perbandingan 2021',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0),
+                                  ),
+                                  LinearPercentIndicator(
+                                    lineHeight: 8.0,
+                                    percent: 0.4,
+                                    progressColor: Colors.green,
+                                  ),
+                                  const Text(
+                                    "100.000 dari 65.000",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w200,
+                                        fontSize: 14.0),
+                                  ),
+                                ],
                               ),
-                              LinearPercentIndicator(
-                                lineHeight: 8.0,
-                                percent: 0.4,
-                                progressColor: Colors.green,
-                              ),
-                              const Text(
-                                "100.000 dari 65.000",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 14.0),
-                              ),
-                            ],
-                          ),
+                            ),
+                            const Text(
+                              '+35%',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ],
                         ),
-                        const Text(
-                          '+35%',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        const Divider(color: Colors.black12),
+                        Row(
+                          children: const [
+                            Text(
+                              'Fakultas Terbaik',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                            Text(
+                              "(Publikasi)",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14.0),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    const Divider(color: Colors.black12),
-                    Row(
-                      children: const [
-                        Text(
-                          'Fakultas Terbaik',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/crown.png',
+                              width: 45,
+                            ),
+                            const Text(
+                              "FPMIPA",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "(Publikasi)",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14.0),
+                        const Divider(color: Colors.black12),
+                        Row(
+                          children: const [
+                            Text(
+                              'Prodi Terbaik',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                            Text(
+                              "(Publikasi)",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14.0),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/crown.png',
-                          width: 45,
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/crown.png',
+                              width: 45,
+                            ),
+                            const Text(
+                              "Ilmu Komputer",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ],
                         ),
-                        const Text(
-                          "FPMIPA",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
-                        ),
-                      ],
-                    ),
-                    const Divider(color: Colors.black12),
-                    Row(
-                      children: const [
-                        Text(
-                          'Prodi Terbaik',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
-                        ),
-                        Text(
-                          "(Publikasi)",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14.0),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/crown.png',
-                          width: 45,
-                        ),
-                        const Text(
-                          "Ilmu Komputer",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
-                        ),
-                      ],
-                    ),
                       ],
                     ),
                   ),

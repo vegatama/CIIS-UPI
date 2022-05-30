@@ -85,6 +85,7 @@ class _DosenPageState extends State<DosenPage> {
                 padding: const EdgeInsets.all(10.0),
                 child: DeveloperChart(
                   data: data,
+                  judul: "Tren Publikasi Dosen",
                 )),
             const Divider(color: Colors.black12),
             const Text('Gelar Dosen',
