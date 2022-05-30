@@ -72,9 +72,8 @@ class _FakultasPageState extends State<FakultasPage> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            //ubah chart
             Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: DeveloperChart(
