@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'DosenPage.dart';
+import 'MahasiswaPage.dart';
 import 'splash-screen.dart';
 import 'Leaderboard.dart';
 import 'Dashboard.dart';
@@ -72,6 +74,28 @@ class MyHome extends StatelessWidget {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
                         return MyHomePage();
+                      }));
+                    }),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ElevatedButton(
+                    child: Text('Dosen'),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return DosenPage();
+                      }));
+                    }),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ElevatedButton(
+                    child: Text('Mahasiswa'),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return MahasiswaPage();
                       }));
                     }),
               ),
