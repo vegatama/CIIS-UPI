@@ -8,6 +8,8 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'chart/developer_series.dart';
 import 'chart/developer_chart.dart';
 import 'package:pie_chart/pie_chart.dart';
+// import 'package:fl_chart/fl_chart.dart';
+import 'line_chart/line_chart_sample2.dart';
 
 class FakultasPage extends StatefulWidget {
   const FakultasPage({Key? key}) : super(key: key);
@@ -76,10 +78,7 @@ class _FakultasPageState extends State<FakultasPage> {
             //ubah chart
             Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: DeveloperChart(
-                  data: data,
-                  judul: "Tren Publikasi Fakultas",
-                )),
+                child: LineChartSample2()),
             const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,
