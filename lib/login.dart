@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/main.dart';
+import 'Dashboard.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,13 +41,13 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: Image.asset(
-                    'assets/images/UPI.png',
-                    width: 130,
-                    height: 130,
-                  ),
-                ),
+              margin: const EdgeInsets.only(top: 15),
+              child: Image.asset(
+                'assets/images/UPI.png',
+                width: 130,
+                height: 130,
+              ),
+            ),
             const SizedBox(
               height: 20.0,
             ),
@@ -63,8 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.white,
                   fontSize: 13.0,
                   fontWeight: FontWeight.bold,
-                )
-            ),
+                )),
             const SizedBox(
               height: 44,
             ),
@@ -111,8 +111,14 @@ class _LoginPageState extends State<LoginPage> {
                 fillColor: const Color.fromRGBO(234, 67, 53, 1),
                 elevation: 0.0,
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return MyHomePage();
+                  }));
+                },
                 child: const Text(
                   "Login",
                   style: TextStyle(
@@ -121,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                ),
+              ),
             ),
           ],
         ),

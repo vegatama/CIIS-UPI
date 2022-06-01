@@ -1,5 +1,13 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'DosenPage.dart';
+import 'FakultasPage.dart';
+import 'MahasiswaPage.dart';
+import 'ProdiPage.dart';
+import 'splash-screen.dart';
+import 'Leaderboard.dart';
+import 'Dashboard.dart';
+import 'login.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -33,7 +41,10 @@ class NavBar extends StatelessWidget {
                 'Beranda',
               ),
               onTap: () {
-                null;
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return MyHomePage();
+                }));
               }),
           ExpansionTile(
             leading: Icon(
@@ -43,21 +54,25 @@ class NavBar extends StatelessWidget {
             title: Text('Akademik'),
             children: <Widget>[
               ListTile(
-                title: Text(
-                  'Menu 1',
-                ),
-                onTap: () {
-                  null;
-                },
-              ),
+                  title: Text(
+                    'Publikasi',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return MyHomePage();
+                    }));
+                  }),
               ListTile(
-                title: Text(
-                  'Menu 2',
-                ),
-                onTap: () {
-                  null;
-                },
-              )
+                  title: Text(
+                    'Tren Nilai',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return MyHomePage();
+                    }));
+                  }),
             ],
           ),
           ExpansionTile(
@@ -68,21 +83,25 @@ class NavBar extends StatelessWidget {
             title: Text('Fakultas dan Prodi'),
             children: <Widget>[
               ListTile(
-                title: Text(
-                  'Menu 1',
-                ),
-                onTap: () {
-                  null;
-                },
-              ),
+                  title: Text(
+                    'Fakultas',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return FakultasPage();
+                    }));
+                  }),
               ListTile(
-                title: Text(
-                  'Menu 2',
-                ),
-                onTap: () {
-                  null;
-                },
-              )
+                  title: Text(
+                    'Prodi',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return ProdiPage();
+                    }));
+                  }),
             ],
           ),
           ExpansionTile(
@@ -93,21 +112,25 @@ class NavBar extends StatelessWidget {
             title: Text('Dosen dan Mahasiswa'),
             children: <Widget>[
               ListTile(
-                title: Text(
-                  'Menu 1',
-                ),
-                onTap: () {
-                  null;
-                },
-              ),
+                  title: Text(
+                    'Dosen',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return DosenPage();
+                    }));
+                  }),
               ListTile(
-                title: Text(
-                  'Menu 2',
-                ),
-                onTap: () {
-                  null;
-                },
-              )
+                  title: Text(
+                    'Mahasiswa',
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return MahasiswaPage();
+                    }));
+                  }),
             ],
           ),
           ExpansionTile(
@@ -119,12 +142,14 @@ class NavBar extends StatelessWidget {
             children: <Widget>[
               ListTile(
                 title: Text(
-                  'Menu 1',
+                  'Leaderboard',
                 ),
                 onTap: () {
-                  null;
-                },
-              ),
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return Profile();
+                    }));
+                  }),
               ListTile(
                 title: Text(
                   'Menu 2',
@@ -171,7 +196,11 @@ void tampilkanDialog(BuildContext context) {
           child: const Text('Batal'),
         ),
         TextButton(
-          onPressed: () => Navigator.pop(context, 'OK'),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return HomePage();
+            }));
+          },
           child: const Text('OK'),
         ),
       ],
