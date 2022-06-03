@@ -63,7 +63,7 @@ class _ProdiPageState extends State<ProdiPage> {
     return Scaffold(
       drawer: const NavBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
+        preferredSize: const Size.fromHeight(320.0),
         child: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -73,21 +73,27 @@ class _ProdiPageState extends State<ProdiPage> {
           child: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
-            title: const Text('CISS UPI'),
+            title: const Text('Program Studi'),
+            flexibleSpace: Padding(
+              padding: const EdgeInsets.all(7.0),
+              child: ListView(
+                children: [
+                  const SizedBox(height: 55),
+                  DeveloperChart(
+                  data: data,
+                  judul: "Tren Publikasi Program Studi",
+                )
+                ],
+              ),
+            ),
           ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: [
             //ubah chart
-            Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: DeveloperChart(
-                  data: data,
-                  judul: "Tren Publikasi Program Studi",
-                )),
             const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,

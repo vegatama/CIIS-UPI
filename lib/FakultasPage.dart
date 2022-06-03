@@ -67,28 +67,59 @@ class _FakultasPageState extends State<FakultasPage> {
     return Scaffold(
       drawer: const NavBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
+        preferredSize: const Size.fromHeight(320.0),
         child: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color.fromARGB(255, 10, 154, 48), Color.fromARGB(255, 7, 71, 33)])),
+                  colors: [
+                Color.fromARGB(255, 10, 154, 48),
+                Color.fromARGB(255, 7, 71, 33)
+              ])),
           child: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
-            title: const Text('CISS UPI'),
+            title: const Text('Fakultas'),
+            flexibleSpace: Padding(
+              padding: const EdgeInsets.all(7.0),
+              child: ListView(
+                children: [
+                  const SizedBox(height: 55),
+                  Container(
+                    height: 250,
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              "Tren Publikasi Fakultas",
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ),
+                            Text(
+                              "Jan 2022 - Jul 2022",
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ),
+                            Expanded(
+                              child: LineChartSample2(),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: [
             //ubah chart
-            Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: LineChartSample2()),
             const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,

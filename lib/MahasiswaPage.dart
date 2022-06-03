@@ -64,39 +64,41 @@ class _MahasiswaPageState extends State<MahasiswaPage> {
     return Scaffold(
       drawer: const NavBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
+        preferredSize: const Size.fromHeight(320.0),
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color.fromARGB(255, 19, 54, 232), Color(0xFF060E39)])),
+                  colors: [
+                    Color.fromARGB(255, 19, 54, 232),
+                    Color(0xFF060E39)
+                  ])),
           child: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
-            title: const Text('CISS UPI'),
+            title: const Text('Mahasiswa'),
+            flexibleSpace: Padding(
+              padding: const EdgeInsets.all(7.0),
+              child: ListView(
+                children: [
+                  const SizedBox(height: 55),
+                  DeveloperChart(
+                    data: data,
+                    judul: "Tren Publikasi Mahasiswa",
+                  )
+                ],
+              ),
+            ),
           ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: ListView(
           // mainAxisAlignment: MainAxisAlignment.start,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: const Text("Mahasiswa",
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-            ),
-            Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: DeveloperChart(
-                  data: data,
-                  judul: "Tren Publikasi Mahasiswa",
-                )),
             const Divider(color: Colors.black12),
             const Text('Status Mahasiswa',
                 textAlign: TextAlign.center,
