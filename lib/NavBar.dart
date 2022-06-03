@@ -48,35 +48,6 @@ class NavBar extends StatelessWidget {
               }),
           ExpansionTile(
             leading: Icon(
-              Icons.book,
-              color: Color(0xFF060E39),
-            ),
-            title: Text('Akademik'),
-            children: <Widget>[
-              ListTile(
-                  title: Text(
-                    'Publikasi',
-                  ),
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return MyHomePage();
-                    }));
-                  }),
-              ListTile(
-                  title: Text(
-                    'Tren Nilai',
-                  ),
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return MyHomePage();
-                    }));
-                  }),
-            ],
-          ),
-          ExpansionTile(
-            leading: Icon(
               Icons.assured_workload,
               color: Color(0xFF060E39),
             ),
@@ -150,25 +121,8 @@ class NavBar extends StatelessWidget {
                       return Profile();
                     }));
                   }),
-              ListTile(
-                title: Text(
-                  'Menu 2',
-                ),
-                onTap: () {
-                  null;
-                },
-              )
             ],
           ),
-          ListTile(
-              leading: Icon(
-                Icons.checklist,
-                color: Color(0xFF060E39),
-              ),
-              title: Text('Survey'),
-              onTap: () {
-                null;
-              }),
           ListTile(
               leading: Icon(
                 Icons.exit_to_app,
