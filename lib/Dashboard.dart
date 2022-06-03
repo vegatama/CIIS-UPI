@@ -64,10 +64,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(0, 255, 255, 255),
-        title: const Text('CISS UPI'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFFFD4140), Color(0xFF060E39)])),
+          child: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.transparent,
+            title: const Text('CISS UPI'),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
