@@ -101,7 +101,7 @@ class _FakultasPageState extends State<FakultasPage> {
                               "Jan 2022 - Jul 2022",
                               style: Theme.of(context).textTheme.bodyText2,
                             ),
-                            Expanded(
+                            const Expanded(
                               child: LineChartSample2(),
                             )
                           ],

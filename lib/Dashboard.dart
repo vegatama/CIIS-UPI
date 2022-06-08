@@ -218,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                         const Divider(color: Colors.black12),
-                        Row(
+                        Row( 
                           children: const [
                             Text(
                               'Prodi Terbaik',

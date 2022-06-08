@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'DosenPage.dart';
 import 'FakultasPage.dart';
 import 'MahasiswaPage.dart';
+import 'TrendNilai.dart';
 import 'ProdiPage.dart';
 import 'splash-screen.dart';
 import 'Leaderboard.dart';
@@ -112,7 +113,7 @@ class NavBar extends StatelessWidget {
             title: Text('Prestasi'),
             children: <Widget>[
               ListTile(
-                title: Text(
+                title: const Text(
                   'Leaderboard',
                 ),
                 onTap: () {
@@ -121,6 +122,27 @@ class NavBar extends StatelessWidget {
                       return Profile();
                     }));
                   }),
+              ListTile(
+                title: const Text(
+                  'Publikasi',
+                ),
+                onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return Profile();
+                    }));
+                  }),
+              ListTile(
+                title: const Text(
+                  'Trend Nilai',
+                ),
+                onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return TrendNilai();
+                    }));
+                  }),
+              
             ],
           ),
           ListTile(
