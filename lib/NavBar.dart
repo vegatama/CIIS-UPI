@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'DosenPage.dart';
 import 'FakultasPage.dart';
 import 'MahasiswaPage.dart';
+import 'PublikasiPage.dart';
 import 'TrendNilai.dart';
 import 'ProdiPage.dart';
 import 'splash-screen.dart';
@@ -113,36 +114,44 @@ class NavBar extends StatelessWidget {
             title: Text('Prestasi'),
             children: <Widget>[
               ListTile(
-                title: const Text(
-                  'Leaderboard',
-                ),
-                onTap: () {
+                  title: const Text(
+                    'Leaderboard',
+                  ),
+                  onTap: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
                       return Profile();
                     }));
                   }),
+            ],
+          ),
+          ExpansionTile(
+            leading: Icon(
+              Icons.school,
+              color: Color(0xFF060E39),
+            ),
+            title: Text('Akademik'),
+            children: <Widget>[
               ListTile(
-                title: const Text(
-                  'Publikasi',
-                ),
-                onTap: () {
+                  title: const Text(
+                    'Publikasi',
+                  ),
+                  onTap: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Profile();
+                      return Publikasi();
                     }));
                   }),
               ListTile(
-                title: const Text(
-                  'Trend Nilai',
-                ),
-                onTap: () {
+                  title: const Text(
+                    'Trend Nilai',
+                  ),
+                  onTap: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
                       return TrendNilai();
                     }));
                   }),
-              
             ],
           ),
           ListTile(
