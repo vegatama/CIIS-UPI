@@ -63,7 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 13.0,
-                  fontWeight: FontWeight.bold,
                 )),
             const SizedBox(
               height: 44,
@@ -110,9 +109,9 @@ class _LoginPageState extends State<LoginPage> {
               child: RawMaterialButton(
                 fillColor: const Color.fromRGBO(234, 67, 53, 1),
                 elevation: 0.0,
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
+                    borderRadius: BorderRadius.circular(5.0)),
                 onPressed: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
@@ -123,8 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Login",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
