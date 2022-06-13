@@ -84,32 +84,47 @@ class _PublikasiState extends State<Publikasi> {
               child: ListView(
                 children: [
                   const SizedBox(height: 55),
-                  const Text('Sebaran Publikasi per Fakultas',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 15.0, fontWeight: FontWeight.w500)),
-                  const SizedBox(height: 10),
-                  PieChart(
-                    dataMap: dataMap,
-                    chartType: ChartType.ring,
-                    animationDuration: const Duration(milliseconds: 500),
-                    chartRadius: MediaQuery.of(context).size.width / 3,
-                    legendOptions: const LegendOptions(
-                      showLegendsInRow: false,
-                      legendPosition: LegendPosition.left,
-                      showLegends: true,
-                      legendTextStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  Container(
+                    height: 250,
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Column(
+                          children: <Widget>[
+                            Text('Sebaran Publikasi per Fakultas',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500)),
+                            SizedBox(height: 10),
+                            PieChart(
+                              dataMap: dataMap,
+                              chartType: ChartType.ring,
+                              animationDuration:
+                                  const Duration(milliseconds: 500),
+                              chartRadius:
+                                  MediaQuery.of(context).size.width / 3,
+                              legendOptions: const LegendOptions(
+                                showLegendsInRow: false,
+                                legendPosition: LegendPosition.left,
+                                showLegends: true,
+                                legendTextStyle: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              chartValuesOptions: const ChartValuesOptions(
+                                showChartValueBackground: true,
+                                showChartValues: true,
+                                showChartValuesInPercentage: true,
+                                showChartValuesOutside: true,
+                                decimalPlaces: 2,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    chartValuesOptions: const ChartValuesOptions(
-                      showChartValueBackground: true,
-                      showChartValues: true,
-                      showChartValuesInPercentage: true,
-                      showChartValuesOutside: true,
-                      decimalPlaces: 2,
-                    ),
-                  ),
+                  )
                 ],
               ),
             ),
