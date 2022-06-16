@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'NavBar.dart';
+import 'dosen-1.dart';
+import 'dosen-2.dart';
+import 'dosen-3.dart';
+import 'dosen-4.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
-import 'chart/developer_series.dart';
 import 'chart/developer_chart.dart';
 import 'package:pie_chart/pie_chart.dart';
 
@@ -16,48 +18,6 @@ class DosenPage extends StatefulWidget {
 }
 
 class _DosenPageState extends State<DosenPage> {
-  final List<DeveloperSeries> data = [
-    DeveloperSeries(
-      year: "FPMIPA",
-      developers: 40000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPTK",
-      developers: 5000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPOK",
-      developers: 40000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPBS",
-      developers: 35000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPIPS",
-      developers: 45000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FIP",
-      developers: 45000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPEB",
-      developers: 45000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-  ];
-  Map<String, double> dataMap = {
-    "Magister - S2": 500,
-    "Doktor - S3": 150,
-    "Professor": 15,
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -83,10 +43,7 @@ class _DosenPageState extends State<DosenPage> {
               child: ListView(
                 children: [
                   const SizedBox(height: 55),
-                  DeveloperChart(
-                    data: data,
-                    judul: "Tren Publikasi Dosen",
-                  )
+                  Dosen1(),
                 ],
               ),
             ),
@@ -107,163 +64,15 @@ class _DosenPageState extends State<DosenPage> {
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(height: 10),
-            PieChart(
-              dataMap: dataMap,
-              chartType: ChartType.ring,
-              animationDuration: const Duration(milliseconds: 500),
-              chartRadius: MediaQuery.of(context).size.width / 3,
-              legendOptions: const LegendOptions(
-                showLegendsInRow: false,
-                legendPosition: LegendPosition.left,
-                showLegends: true,
-                legendTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              chartValuesOptions: const ChartValuesOptions(
-                showChartValueBackground: true,
-                showChartValues: true,
-                showChartValuesInPercentage: true,
-                showChartValuesOutside: true,
-                decimalPlaces: 2,
-              ),
-            ),
+            Dosen2(),
             const Divider(color: Colors.black12),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Dosen yang Sedang Menempuh Studi',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Dosen yang Baru Masuk Tahun ini',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Dosen yang akan Pensiun Tahun ini',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
+            const SizedBox(height: 10),  
+            Dosen3(),
             const Divider(color: Colors.black12),
             Container(
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(14),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: CircularPercentIndicator(
-                      radius: 100.0,
-                      lineWidth: 30.0,
-                      animation: true,
-                      percent: 0.76,
-                      center: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            "76.0%",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20.0),
-                          ),
-                          Text(
-                            "dari keseluruhan",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                          Text(
-                            "100.000",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                        ],
-                      ),
-                      header: Column(
-                        children: const [
-                          Text(
-                            "Jumlah Publikasi oleh Dosen 2022",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 17.0),
-                          ),
-                          Text(
-                            "100.000 Publikasi",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                        ],
-                      ),
-                      circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Colors.blue,
-                    ),
-                  ),
-                ],
-              ),
+              child: Dosen4(),
             ),
           ],
         ),
