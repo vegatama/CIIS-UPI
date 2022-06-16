@@ -3,11 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'NavBar.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
-import 'chart/developer_series.dart';
-import 'chart/developer_chart.dart';
-import 'package:pie_chart/pie_chart.dart';
 import 'line_chart/line_chart_sample2.dart';
+import 'ak-pub-1.dart';
 
 class Publikasi extends StatefulWidget {
   const Publikasi({Key? key}) : super(key: key);
@@ -17,55 +14,13 @@ class Publikasi extends StatefulWidget {
 }
 
 class _PublikasiState extends State<Publikasi> {
-  final List<DeveloperSeries> data = [
-    DeveloperSeries(
-      year: "FPMIPA",
-      developers: 3.10,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPTK",
-      developers: 3.59,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPOK",
-      developers: 2.7,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPBS",
-      developers: 1.6,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPIPS",
-      developers: 3.9,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FIP",
-      developers: 2.7,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPEB",
-      developers: 3.8,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-  ];
-  Map<String, double> dataMap = {
-    "FPMIPA": 500,
-    "FPTK": 150,
-    "FPOK": 15,
-  };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(320.0),
+        preferredSize: const Size.fromHeight(340.0),
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -85,7 +40,7 @@ class _PublikasiState extends State<Publikasi> {
                 children: [
                   const SizedBox(height: 55),
                   Container(
-                    height: 250,
+                    height: 270,
                     child: Card(
                       child: Padding(
                         padding: const EdgeInsets.all(9.0),
@@ -97,29 +52,7 @@ class _PublikasiState extends State<Publikasi> {
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w500)),
                             SizedBox(height: 10),
-                            PieChart(
-                              dataMap: dataMap,
-                              chartType: ChartType.ring,
-                              animationDuration:
-                                  const Duration(milliseconds: 500),
-                              chartRadius:
-                                  MediaQuery.of(context).size.width / 3,
-                              legendOptions: const LegendOptions(
-                                showLegendsInRow: false,
-                                legendPosition: LegendPosition.left,
-                                showLegends: true,
-                                legendTextStyle: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              chartValuesOptions: const ChartValuesOptions(
-                                showChartValueBackground: true,
-                                showChartValues: true,
-                                showChartValuesInPercentage: true,
-                                showChartValuesOutside: true,
-                                decimalPlaces: 2,
-                              ),
-                            ),
+                            Expanded(child: Pub1()),
                           ],
                         ),
                       ),
@@ -147,7 +80,7 @@ class _PublikasiState extends State<Publikasi> {
               ),
             ),
             Text(
-              "Jan 2022 - Jul 2022",
+              "Jan 2022 - Dec 2022",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyText2,
             ),
