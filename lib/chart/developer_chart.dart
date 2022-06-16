@@ -30,7 +30,7 @@ class DeveloperChart extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               Text(
-                "Jan 2022 - Jul 2022",
+                "Jan 2022 - Dec 2022",
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               Expanded(

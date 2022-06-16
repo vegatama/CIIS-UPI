@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'DosenPage.dart';
-import 'FakultasPage.dart';
-import 'MahasiswaPage.dart';
-import 'ProdiPage.dart';
 import 'splash-screen.dart';
-import 'Leaderboard.dart';
-import 'Dashboard.dart';
 import 'login.dart';
 import 'dart:async';
 
