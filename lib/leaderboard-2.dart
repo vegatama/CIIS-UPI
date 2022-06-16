@@ -131,7 +131,7 @@ class MyAppState extends State<leaderboard2> {
                         ),
                       ],
                     ),
-                    trailing: Text(snapshot.data!.ListPop[index].pts.toString(),
+                    trailing: Text(snapshot.data!.ListPop[index].pts.toString()+" Pts",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     );
                   },
