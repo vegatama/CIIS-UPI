@@ -6,6 +6,11 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'chart/developer_series.dart';
 import 'chart/developer_chart.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'prodi-1.dart';
+import 'prodi-2.dart';
+import 'prodi-3.dart';
+import 'prodi-4.dart';
+import 'prodi-5.dart';
 
 class ProdiPage extends StatefulWidget {
   const ProdiPage({Key? key}) : super(key: key);
@@ -69,7 +74,10 @@ class _ProdiPageState extends State<ProdiPage> {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color.fromARGB(255, 10, 154, 48), Color.fromARGB(255, 7, 71, 33)])),
+                  colors: [
+                Color.fromARGB(255, 10, 154, 48),
+                Color.fromARGB(255, 7, 71, 33)
+              ])),
           child: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
@@ -79,10 +87,7 @@ class _ProdiPageState extends State<ProdiPage> {
               child: ListView(
                 children: [
                   const SizedBox(height: 55),
-                  DeveloperChart(
-                  data: data,
-                  judul: "Tren Publikasi Program Studi",
-                )
+                  Prodi1(),
                 ],
               ),
             ),
@@ -98,140 +103,7 @@ class _ProdiPageState extends State<ProdiPage> {
             Container(
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(14),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: CircularPercentIndicator(
-                      radius: 100.0,
-                      lineWidth: 30.0,
-                      animation: true,
-                      percent: 0.76,
-                      center: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            "76.0%",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20.0),
-                          ),
-                          Text(
-                            "dari target",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                          Text(
-                            "150.000",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                        ],
-                      ),
-                      header: Column(
-                        children: const [
-                          Text(
-                            "Jumlah Publikasi 2022",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 17.0),
-                          ),
-                          Text(
-                            "100.000 Publikasi",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200, fontSize: 14.0),
-                          ),
-                        ],
-                      ),
-                      circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Colors.blue,
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  const Text(
-                                    'Perbandingan 2021',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.0),
-                                  ),
-                                  LinearPercentIndicator(
-                                    lineHeight: 8.0,
-                                    percent: 0.4,
-                                    progressColor: Colors.green,
-                                  ),
-                                  const Text(
-                                    "100.000 dari 65.000",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w200,
-                                        fontSize: 14.0),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const Text(
-                              '+35%',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
-                        ),
-                        const Divider(color: Colors.black12),
-                        Row(
-                          children: const [
-                            Text(
-                              'Peringkat Nilai di Universitas',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15.0),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/crown.png',
-                              width: 45,
-                            ),
-                            const Text(
-                              "#1",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
-                        ),
-                        const Divider(color: Colors.black12),
-                        Row(
-                          children: const [
-                            Text(
-                              'Peringkat Nilai di Fakultas',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15.0),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/crown.png',
-                              width: 45,
-                            ),
-                            const Text(
-                              "#1",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              child: Prodi2(),
             ),
             const Divider(color: Colors.black12),
             const Text('Gelar Dosen',
@@ -241,27 +113,7 @@ class _ProdiPageState extends State<ProdiPage> {
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(height: 10),
-            PieChart(
-              dataMap: dataMap,
-              chartType: ChartType.ring,
-              animationDuration: const Duration(milliseconds: 500),
-              chartRadius: MediaQuery.of(context).size.width / 3,
-              legendOptions: const LegendOptions(
-                showLegendsInRow: false,
-                legendPosition: LegendPosition.left,
-                showLegends: true,
-                legendTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              chartValuesOptions: const ChartValuesOptions(
-                showChartValueBackground: true,
-                showChartValues: true,
-                showChartValuesInPercentage: true,
-                showChartValuesOutside: true,
-                decimalPlaces: 2,
-              ),
-            ),
+            Prodi3(),
             const Divider(color: Colors.black12),
             const Text('Status Mahasiswa',
                 textAlign: TextAlign.center,
@@ -270,110 +122,10 @@ class _ProdiPageState extends State<ProdiPage> {
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(height: 10),
-            PieChart(
-              dataMap: dataMap,
-              chartType: ChartType.ring,
-              animationDuration: const Duration(milliseconds: 500),
-              chartRadius: MediaQuery.of(context).size.width / 3,
-              legendOptions: const LegendOptions(
-                showLegendsInRow: false,
-                legendPosition: LegendPosition.left,
-                showLegends: true,
-                legendTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              chartValuesOptions: const ChartValuesOptions(
-                showChartValueBackground: true,
-                showChartValues: true,
-                showChartValuesInPercentage: true,
-                showChartValuesOutside: true,
-                decimalPlaces: 2,
-              ),
-            ),
+            Prodi4(),
             const Divider(color: Colors.black12),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Dosen yang Sedang Menempuh Studi',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Dosen yang Akan Pensiun Tahun ini',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Mahasiswa yang Lulus Tahun Ini',
-                      ),
-                      LinearPercentIndicator(
-                        lineHeight: 8.0,
-                        percent: 0.4,
-                        progressColor: Colors.green,
-                      ),
-                      const Text(
-                        "100.000 dari 65.000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  '+35%',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-              ],
-            ),
+            Prodi5(),
           ],
         ),
       ),
