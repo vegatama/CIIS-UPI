@@ -8,6 +8,7 @@ import 'chart/developer_series.dart';
 import 'chart/developer_chart.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'line_chart/line_chart_sample2.dart';
+import 'ak-trennilai-1.dart';
 
 class TrendNilai extends StatefulWidget {
   const TrendNilai({Key? key}) : super(key: key);
@@ -17,43 +18,6 @@ class TrendNilai extends StatefulWidget {
 }
 
 class _TrendNilaiState extends State<TrendNilai> {
-  final List<DeveloperSeries> data = [
-    DeveloperSeries(
-      year: "FPMIPA",
-      developers: 3.10,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPTK",
-      developers: 3.59,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPOK",
-      developers: 2.7,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FPBS",
-      developers: 1.6,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPIPS",
-      developers: 3.9,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
-    DeveloperSeries(
-      year: "FIP",
-      developers: 2.7,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-    DeveloperSeries(
-      year: "FPEB",
-      developers: 3.8,
-      barColor: charts.ColorUtil.fromDartColor(Colors.grey),
-    ),
-  ];
   Map<String, double> dataMap = {
     "Mahasiswa Aktif": 500,
     "Cuti": 150,
@@ -84,10 +48,7 @@ class _TrendNilaiState extends State<TrendNilai> {
               child: ListView(
                 children: [
                   const SizedBox(height: 55),
-                  DeveloperChart(
-                    data: data,
-                    judul: "Rata-rata IPK Fakultas",
-                  )
+                  Nilai1(),
                 ],
               ),
             ),
