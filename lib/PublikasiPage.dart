@@ -1,10 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application/ak-pub-2.dart';
 import 'NavBar.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'line_chart/line_chart_sample2.dart';
 import 'ak-pub-1.dart';
+import 'ak-pub-2.dart';
 
 class Publikasi extends StatefulWidget {
   const Publikasi({Key? key}) : super(key: key);
@@ -14,7 +16,6 @@ class Publikasi extends StatefulWidget {
 }
 
 class _PublikasiState extends State<Publikasi> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,22 +72,23 @@ class _PublikasiState extends State<Publikasi> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Divider(color: Colors.black12),
-            const Text(
-              "Trend Publikasi Fakultas",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 17.0,
-              ),
-            ),
-            Text(
-              "Jan 2022 - Dec 2022",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
-            Expanded(
-              child: LineChartSample2(),
-            ),
+            Publikasi1(),
+            // const Text(
+            //   "Trend Publikasi Fakultas",
+            //   textAlign: TextAlign.center,
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.bold,
+            //     fontSize: 17.0,
+            //   ),
+            // ),
+            // Text(
+            //   "Jan 2022 - Dec 2022",
+            //   textAlign: TextAlign.center,
+            //   style: Theme.of(context).textTheme.bodyText2,
+            // ),
+            // Expanded(
+            //   child: LineChartSample2(),
+            // ),
             const Divider(color: Colors.black12),
             const SizedBox(height: 10),
             Row(
