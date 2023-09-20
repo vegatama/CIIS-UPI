@@ -12,4 +12,8 @@
 this appliccation is a Centralized Information System that shows data in charts and compact way for helping upper management of universitas pendidikan indonesia to make a decision.
 
 ## app screenshoot
-
+![image](https://github.com/vegatama/CIIS-UPI/blob/new-branch/SS/1.png)
+![image](https://github.com/vegatama/CIIS-UPI/blob/new-branch/SS/2.png)
+![image](https://github.com/vegatama/CIIS-UPI/blob/new-branch/SS/3.png)
+![image](https://github.com/vegatama/CIIS-UPI/blob/new-branch/SS/4.png)
+![image](https://github.com/vegatama/CIIS-UPI/blob/new-branch/SS/5.png)
